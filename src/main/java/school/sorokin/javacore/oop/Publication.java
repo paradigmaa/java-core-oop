@@ -26,7 +26,7 @@ public abstract class Publication implements Printable {
 
     private static int publicationCount = 0;
 
-    public static int getPublicationCount(){
+    public static int getPublicationCount() {
         return Publication.publicationCount;
     }
 

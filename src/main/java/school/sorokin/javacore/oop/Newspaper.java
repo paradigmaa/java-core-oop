@@ -11,7 +11,6 @@ public class Newspaper extends Publication {
     }
 
 
-
     @Override
     public String getType() {
         return "Newspaper";
@@ -21,7 +20,6 @@ public class Newspaper extends Publication {
     public String getPublicationDay() {
         return publicationDay;
     }
-
 
 
     @Override
