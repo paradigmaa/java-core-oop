@@ -6,13 +6,13 @@ import java.util.List;
 
 public class Library {
     private final List<Publication> publications;
-
     public Library(List<Publication> publications) {
         this.publications = publications;
     }
 
     public void addPublication(Publication pub) {
         publications.add(pub);
+        Publication.incrementCount();
     }
 
     public void listPublications() {
@@ -20,7 +20,7 @@ public class Library {
             System.out.println("Список пуст");
         }
         for (Publication p : publications) {
-            System.out.println(p);
+            p.printDetails();
         }
     }
 
@@ -35,7 +35,9 @@ public class Library {
             Publication pub = iterator.next();
             if (pub.getTitle().equals(title)) {
                 iterator.remove();
+                Publication.decrementCount();
             }
+
         }
     }
 

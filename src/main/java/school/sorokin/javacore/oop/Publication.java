@@ -14,7 +14,6 @@ public abstract class Publication implements Printable {
         this.title = title;
         this.author = author;
         this.year = year;
-        publicationCount++;
     }
 
     @Override
@@ -28,6 +27,14 @@ public abstract class Publication implements Printable {
 
     public static int getPublicationCount() {
         return Publication.publicationCount;
+    }
+
+    protected static void incrementCount(){
+        publicationCount++;
+    }
+
+    protected static void decrementCount(){
+        publicationCount--;
     }
 
     public String getTitle() {
