@@ -3,7 +3,7 @@ package school.sorokin.javacore.oop;
 import java.util.Objects;
 
 public class Magazine extends Publication {
-    private int issueNumber;
+    private final int issueNumber;
 
 
     public Magazine(String title, String author, int year, int issueNumber) {
@@ -12,51 +12,12 @@ public class Magazine extends Publication {
     }
 
     @Override
-    public void printDetails() {
-        super.printDetails();
-    }
-
-    @Override
     public String getType() {
-        return "";
-    }
-
-    @Override
-    public String getTitle() {
-        return super.getTitle();
-    }
-
-    @Override
-    public void setTitle(String tittle) {
-        super.setTitle(tittle);
-    }
-
-    @Override
-    public String getAuthor() {
-        return super.getAuthor();
-    }
-
-    @Override
-    public void setAuthor(String author) {
-        super.setAuthor(author);
-    }
-
-    @Override
-    public int getYear() {
-        return super.getYear();
-    }
-
-    @Override
-    public void setYear(int year) {
-        super.setYear(year);
+        return "Magazine";
     }
 
     public int getIssueNumber() {
         return issueNumber;
-    }
-
-    public void setIssueNumber(int issueNumber) {
-        this.issueNumber = issueNumber;
     }
 
     @Override

@@ -3,12 +3,12 @@ package school.sorokin.javacore.oop;
 import java.util.Objects;
 
 public class Book extends Publication {
-    private String ISBN;
+    private final String isbn;
 
 
-    public Book(String title, String author, int year, String ISBN) {
+    public Book(String title, String author, int year, String isbn) {
         super(title, author, year);
-        this.ISBN = ISBN;
+        this.isbn = isbn;
     }
 
     @Override
@@ -16,48 +16,6 @@ public class Book extends Publication {
         return "Book";
     }
 
-    @Override
-    public void printDetails() {
-        super.printDetails();
-    }
-
-    @Override
-    public String getTitle() {
-        return super.getTitle();
-    }
-
-    @Override
-    public void setTitle(String tittle) {
-        super.setTitle(tittle);
-    }
-
-    @Override
-    public String getAuthor() {
-        return super.getAuthor();
-    }
-
-    @Override
-    public void setAuthor(String author) {
-        super.setAuthor(author);
-    }
-
-    @Override
-    public int getYear() {
-        return super.getYear();
-    }
-
-    @Override
-    public void setYear(int year) {
-        super.setYear(year);
-    }
-
-    public String getISBN() {
-        return ISBN;
-    }
-
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
-    }
 
     @Override
     public String toString() {
@@ -65,7 +23,7 @@ public class Book extends Publication {
                 "title='" + getTitle() + '\'' +
                 "author='" + getAuthor() + '\'' +
                 "year='" + getYear() + '\'' +
-                "ISBN='" + ISBN + '\'' +
+                "ISBN='" + isbn + '\'' +
                 '}';
     }
 
@@ -75,11 +33,11 @@ public class Book extends Publication {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Book book = (Book) o;
-        return Objects.equals(ISBN, book.ISBN);
+        return Objects.equals(isbn, book.isbn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), ISBN);
+        return Objects.hash(super.hashCode(), isbn);
     }
 }

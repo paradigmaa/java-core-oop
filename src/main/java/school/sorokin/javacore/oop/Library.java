@@ -5,27 +5,22 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Library {
-    private List<Publication> publications = new ArrayList<>();
+    private final List<Publication> publications;
+
+    public Library(List<Publication> publications) {
+        this.publications = publications;
+    }
 
     public void addPublication(Publication pub) {
         publications.add(pub);
     }
 
     public void listPublications() {
-        if(publications.isEmpty()) {
+        if (publications.isEmpty()) {
             System.out.println("Список пуст");
         }
         for (Publication p : publications) {
-            if (p instanceof Book) {
-                Book book = (Book) p;
-                System.out.println(book);
-            } else if (p instanceof Magazine) {
-                Magazine magazine = (Magazine) p;
-                System.out.println(magazine);
-            } else if (p instanceof Newspaper) {
-                Newspaper newspaper = (Newspaper) p;
-                System.out.println(newspaper);
-            }
+            System.out.println(p);
         }
     }
 
@@ -34,11 +29,11 @@ public class Library {
                 .map(Publication::getTitle).forEach(System.out::println);
     }
 
-    public void deleteByTittle(String tittle) {
+    public void deleteByTittle(String title) {
         Iterator<Publication> iterator = publications.iterator();
         while (iterator.hasNext()) {
             Publication pub = iterator.next();
-            if (pub.getTitle().equals(tittle)) {
+            if (pub.getTitle().equals(title)) {
                 iterator.remove();
             }
         }

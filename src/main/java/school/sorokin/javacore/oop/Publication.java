@@ -10,7 +10,7 @@ public abstract class Publication implements Printable {
 
     private int year;
 
-    public Publication(String title, String author, int year) {
+    protected Publication(String title, String author, int year) {
         this.title = title;
         this.author = author;
         this.year = year;

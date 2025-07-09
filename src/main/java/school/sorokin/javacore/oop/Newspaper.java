@@ -3,7 +3,7 @@ package school.sorokin.javacore.oop;
 import java.util.Objects;
 
 public class Newspaper extends Publication {
-    private String publicationDay;
+    private final String publicationDay;
 
     public Newspaper(String title, String author, int year, String publicationDay) {
         super(title, author, year);
@@ -11,53 +11,17 @@ public class Newspaper extends Publication {
     }
 
 
-    @Override
-    public void printDetails() {
-        super.printDetails();
-    }
 
     @Override
     public String getType() {
-        return "";
+        return "Newspaper";
     }
 
-    @Override
-    public String getTitle() {
-        return super.getTitle();
-    }
-
-    @Override
-    public void setTitle(String tittle) {
-        super.setTitle(tittle);
-    }
-
-    @Override
-    public String getAuthor() {
-        return super.getAuthor();
-    }
-
-    @Override
-    public void setAuthor(String author) {
-        super.setAuthor(author);
-    }
-
-    @Override
-    public int getYear() {
-        return super.getYear();
-    }
-
-    @Override
-    public void setYear(int year) {
-        super.setYear(year);
-    }
 
     public String getPublicationDay() {
         return publicationDay;
     }
 
-    public void setPublicationDay(String publicationDay) {
-        this.publicationDay = publicationDay;
-    }
 
 
     @Override
